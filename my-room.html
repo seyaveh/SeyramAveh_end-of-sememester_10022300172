@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Room - UG Hostel System</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to right, #dbeafe, #fce4ec); /* blue + pink */
+      margin: 0;
+      font-family: 'Rubik', sans-serif;
+      display: flex;
+      flex-direction: row-reverse; /* Sidebar on the right */
+    }
+    .dashboard {
+      display: flex;
+      width: 100%;
+    }
+    .sidebar {
+      width: 220px;
+      background-color: #3b82f6;
+      color: white;
+      padding: 20px;
+      height: 100vh;
+      position: sticky;
+      top: 0;
+    }
+    .sidebar h2 {
+      font-size: 1.5em;
+      margin-bottom: 1em;
+    }
+    .sidebar nav a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      margin: 0.5em 0;
+      padding: 0.4em;
+      border-radius: 5px;
+    }
+    .sidebar nav a.active, .sidebar nav a:hover {
+      background-color: #2563eb;
+    }
+    .content {
+      flex-grow: 1;
+      padding: 2em;
+    }
+    .content header h1 {
+      color: #e91e63; /* pink tint */
+    }
+    .room-card {
+      background-color: #fce4ec;
+      padding: 1em;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin-top: 1em;
+    }
+    .room-card h3 {
+      margin-bottom: 0.5em;
+      color: #e91e63;
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>UG Hostels</h2>
+      <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="pent.html">Pent Hostel</a>
+        <a href="sey.html">Elizabeth Sey Hostel</a>
+        <a href="sabah.html">Mensah Sabah Hostel</a>
+        <a href="apply.html">Apply for Room</a>
+        <a href="my-application.html">My Application</a>
+        <a href="my-room.html" class="active">My Room</a>
+        
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+      <header>
+        <h1>My Room</h1>
+      </header>
+
+      <section class="room-card">
+        <h3>Assigned Room</h3>
+        <p><strong>Name:</strong> Akua Mensah</p>
+        <p><strong>Hostel:</strong> Elizabeth Sey Hostel</p>
+        <p><strong>Room Number:</strong> 204B</p>
+        <p><strong>Room Type:</strong> 2-in-a-room</p>
+        <p><strong>Check-in Date:</strong> August 10, 2025</p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

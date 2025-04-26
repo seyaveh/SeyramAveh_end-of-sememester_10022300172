@@ -1,0 +1,313 @@
+/* General body styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik', sans-serif;
+    background: #eaeafc;
+  }
+  
+  /* Layout structure */
+  .dashboard-body {
+    display: flex;
+    height: 100vh;
+  }
+  
+  /* LEFT: Hostel options panel */
+  .hostel-tabs {
+    width: 220px;
+    background: #5c4d9d;
+    color: white;
+    padding: 30px 20px;
+    border-right: 3px solid #3a2e67;
+  }
+  
+  .hostel-tabs h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #dcd7f7;
+  }
+  
+  .hostel-tabs ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .hostel-tabs li {
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    background: #3e3173;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .hostel-tabs li:hover {
+    background: #a99de0;
+    color: #1f1b33;
+  }
+  
+  /* CENTER: Main content */
+  .main-panel {
+    flex: 1;
+    padding: 40px;
+    background: #f5f7ff;
+    overflow-y: auto;
+  }
+  
+  .main-panel h1 {
+    color: #4e3f90;
+    font-size: 28px;
+    margin-bottom: 25px;
+  }
+  
+  /* Each panel (card-like sections) */
+  .panel-box {
+    background: white;
+    padding: 25px 30px;
+    margin-top: 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .panel-box:hover {
+    transform: translateY(-3px);
+  }
+  
+  .panel-box h2,
+  .panel-box h3 {
+    color: #4e3f90;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .panel-box p {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  /* Roommate and fact styles */
+  .roommate-panel, .fact-panel, .hostel-info, .countdown-panel {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 25px;
+  }
+  
+  /* Hostel images */
+  .hostel-image {
+    width: 100%;
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 15px;
+    margin: 15px 0;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .hostel-image:hover {
+    transform: scale(1.05);
+  }
+  
+  /* RIGHT: Sidebar navigation */
+  .sidebar {
+    width: 220px;
+    background: linear-gradient(180deg, #4e3f90, #6c5dc2);
+    padding: 20px;
+    height: 100vh;
+    color: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    font-family: 'Rubik', sans-serif;
+    box-shadow: -2px 0 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .sidebar h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #c3b9f4;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    padding: 12px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    background: #6c5dc2;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  .sidebar li:hover {
+    background: #d2caf6;
+    color: #2e245a;
+  }
+  
+  /* To make space for fixed sidebar */
+  .main-content {
+    margin-right: 240px;
+    margin-left: 240px;
+    padding: 20px;
+  }
+  
+  /* Large hostel image */
+  .hostel-img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 10px;
+    display: none;
+  }
+  .slideshow-container {
+    position: relative;
+    max-width: 60%; /* Set the max width to 80% of the container */
+    margin: auto;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  }
+  
+  .slide img {
+    width: 100%;
+    height: auto; 
+    object-fit: contain; 
+    border-radius: 14px;
+    max-width: 60%; 
+    margin: 0 auto;
+  }
+  
+  
+  
+  
+  
+  .fade {
+    animation-name: fade;
+    animation-duration: 1s;
+  }
+  
+  @keyframes fade {
+    from { opacity: .4 }
+    to { opacity: 1 }
+  }
+  
+  .slide-sey, .slide-sabah {
+    display: none;
+  }
+  
+  .slide-sey img, .slide-sabah img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Slideshow arrows */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 10px 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    transition: 0.3s ease;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 3px;
+  }
+  
+  .next {
+    right: 0;
+  }
+  
+  .prev {
+    left: 0;
+  }
+  
+  .prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Auth Page Styles (login/register) */
+  .auth-body {
+    background: #dfdff7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .auth-container {
+    background: white;
+    padding: 40px 50px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .auth-box h1 {
+    text-align: center;
+    color: #4e3f90;
+    margin-bottom: 10px;
+    font-size: 26px;
+  }
+  
+  .auth-box h2 {
+    text-align: center;
+    color: #6c5dc2;
+    margin-bottom: 30px;
+  }
+  
+  .auth-box form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .auth-box label {
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  
+  .auth-box input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #b9b5e3;
+    border-radius: 8px;
+  }
+  
+  .auth-box button {
+    padding: 12px;
+    background: #4e3f90;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .auth-box button:hover {
+    background: #6c5dc2;
+  }
+  
+  .auth-box p {
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  .auth-box a {
+    color: #4e3f90;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  

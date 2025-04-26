@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pent Hostel</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fef6f9;
+      color: #4b4b4b;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff0f5;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      padding: 30px 40px;
+      position: relative;
+    }
+
+    h1 {
+      color: #b65d7a;
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: #4b4b4b;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    .slideshow-container {
+      position: relative;
+      max-width: 100%;
+      margin: auto;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .slide {
+      display: none;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .slide img {
+      width: 100%;
+      border-radius: 14px;
+      object-fit: cover;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 14px;
+      margin-top: -22px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 24px;
+      transition: 0.3s ease;
+      border-radius: 50%;
+      background: rgba(182, 93, 122, 0.7);
+      user-select: none;
+    }
+
+    .next {
+      right: 10px;
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .prev:hover, .next:hover {
+      background: rgba(182, 93, 122, 0.9);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0.4; }
+      to { opacity: 1; }
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+
+    .buttons a {
+      padding: 10px 22px;
+      background-color: #b65d7a;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(182, 93, 122, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .buttons a:hover {
+      background-color: #d183a0;
+      box-shadow: 0 6px 18px rgba(182, 93, 122, 0.4);
+    }
+
+    @media (max-width: 600px) {
+      .buttons {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Pent Hostel</h1>
+
+    <div class="slideshow-container">
+      <div class="slide fade">
+        <img src="images/pent1.png" alt="Pent Hostel 1">
+      </div>
+      <div class="slide fade">
+        <img src="images/pent2.png" alt="Pent Hostel 2">
+      </div>
+      <div class="slide fade">
+        <img src="images/pent3.png" alt="Pent Hostel 3">
+      </div>
+
+      <a class="prev" onclick="changeSlide(-1)">❮</a>
+      <a class="next" onclick="changeSlide(1)">❯</a>
+    </div>
+
+    <p>
+      Pent Hostel is one of the most vibrant and spacious accommodations on campus.
+      Known for its serene environment and excellent facilities, it houses up to 800 students
+      and provides both academic and social comfort.
+    </p>
+    <p><strong>Capacity:</strong> 800 students</p>
+
+    <div class="buttons">
+      <a href="dashboard.html">← Back to Dashboard</a>
+      <a href="apply.html">Apply Now →</a>
+    </div>
+  </div>
+
+  <script>
+    let slideIndex = 0;
+    showSlides(slideIndex);
+
+    function changeSlide(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+      const slides = document.getElementsByClassName("slide");
+      if (n >= slides.length) slideIndex = 0;
+      if (n < 0) slideIndex = slides.length - 1;
+
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex].style.display = "block";
+    }
+
+    setInterval(() => { changeSlide(1); }, 5000);
+  </script>
+
+</body>
+</html>

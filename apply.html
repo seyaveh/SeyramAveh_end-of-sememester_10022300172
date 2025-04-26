@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Apply for Hostel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .form-container h1 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 14px;
+      resize: vertical;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #ff6fa5;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-bottom: 10px;
+    }
+
+    button:hover {
+      background-color: #e0558b;
+    }
+
+    .back-button {
+      background-color: #6faaff;
+    }
+
+    .back-button:hover {
+      background-color: #3e94ff;
+    }
+
+    a {
+      text-decoration: none;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1>Apply for Hostel</h1>
+    <form id="applyForm">
+      <input type="text" id="name" placeholder="Full Name" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <select id="hostel">
+        <option value="Pent">Pent</option>
+        <option value="Mensah Sabah">Mensah Sabah</option>
+        <option value="Elizabeth Sey">Elizabeth Sey</option>
+      </select>
+      <input type="text" id="preference" placeholder="Room Preference" required />
+      <button type="submit">Apply</button>
+    </form>
+    <a href="dashboard.html"><button class="back-button">Back to Dashboard</button></a>
+  </div>
+
+  <script>
+    document.getElementById('applyForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const data = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        hostel: document.getElementById('hostel').value,
+        preference: document.getElementById('preference').value
+        // Note: otherPreferences is not sent to backend to preserve current functionality
+      };
+
+      try {
+        const response = await fetch('http://localhost:5000/api/application/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+        alert('Application submitted: ' + JSON.stringify(result));
+      } catch (error) {
+        alert('Submission failed. Check console.');
+        console.error(error);
+      }
+    });
+  </script>
+</body>
+</html>

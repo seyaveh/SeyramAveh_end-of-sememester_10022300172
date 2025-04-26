@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UG Hostel Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-light: #f0f4f8;
+      --text-light: #1d1d1f;
+      --primary-light: #235d97;
+      --secondary-light: #6e3cbc;
+      --accent-light: #dbeafe;
+
+      --bg-dark: #111827;
+      --text-dark: #f3f4f6;
+      --primary-dark: #3b82f6;
+      --secondary-dark: #a78bfa;
+      --accent-dark: #1f2937;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Nunito', sans-serif;
+      display: flex;
+      height: 100vh;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      transition: all 0.3s ease;
+    }
+
+    body.dark-mode {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    .sidebar {
+      width: 250px;
+      background: linear-gradient(to bottom, var(--primary-light), var(--secondary-light));
+      color: white;
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+      transition: background 0.3s ease;
+    }
+
+    body.dark-mode .sidebar {
+      background: linear-gradient(to bottom, var(--primary-dark), var(--secondary-dark));
+    }
+
+    .sidebar h2 {
+      font-size: 24px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: white;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 12px;
+      margin: 8px 0;
+      border-radius: 10px;
+      font-weight: bold;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateX(5px);
+    }
+
+    .main {
+      flex: 1;
+      padding: 30px;
+      overflow-y: auto;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      padding: 25px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    body.dark-mode .card {
+      background: var(--accent-dark);
+      color: var(--text-dark);
+    }
+
+    .card h2 {
+      font-size: 26px;
+      color: var(--primary-light);
+    }
+
+    body.dark-mode .card h2 {
+      color: var(--secondary-dark);
+    }
+
+    .hostel-image {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+      display: block;
+      margin: 10px auto;
+    }
+
+    .hostel-button {
+      display: block;
+      text-align: center;
+      margin: 10px auto 20px;
+      padding: 10px 20px;
+      background: var(--primary-light);
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      width: 200px;
+    }
+
+    body.dark-mode .hostel-button {
+      background: var(--primary-dark);
+    }
+
+    .toggle-theme {
+      margin-top: auto;
+      padding: 12px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .toggle-theme:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .matcher-form label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: 700;
+    }
+
+    .matcher-form select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .matcher-result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>UG Hostel</h2>
+    <a href="dashboard.html">🏠 Dashboard</a>
+    <a href="register.html">📝 Register</a>
+    <a href="index.html">🔐 Login</a>
+    <a href="apply.html">📄 Apply</a>
+    <a href="my-application.html">🏢 Allotments</a>
+    <a href="notifications.html">📷 Notifications</a>
+    <a href="admin.html">⚙️ Admin</a>
+    <a href="index.html">🚪 Logout</a>
+    <div class="toggle-theme" onclick="toggleTheme()">🌓 Toggle Theme</div>
+  </div>
+
+  <div class="main">
+    <h1>Welcome to UG Hostel Manager</h1>
+
+    <div class="card">
+      <h2>Explore Campus Hostels</h2>
+
+      <a href="pent.html"><img src="images/pent.png" alt="Pent Hostel" class="hostel-image"></a>
+      <a href="pent.html" class="hostel-button">Pent</a>
+
+      <a href="sey.html"><img src="images/sey.png" alt="Elizabeth Sey Hostel" class="hostel-image"></a>
+      <a href="sey.html" class="hostel-button">Elizabeth Sey</a>
+
+      <a href="sabah.html"><img src="images/sabah.png" alt="Mensah Sabah Hostel" class="hostel-image"></a>
+      <a href="sabah.html" class="hostel-button">Mensah Sabah</a>
+    </div>
+
+    <div class="card">
+      <h2>Did You Know?</h2>
+      <p>Loading interesting hostel facts...</p>
+    </div>
+
+    <div class="card">
+      <h2>Roommate Matcher</h2>
+      <form class="matcher-form" onsubmit="event.preventDefault(); matchRoommate();">
+        <label for="sleep">Sleep Preference</label>
+        <select id="sleep">
+          <option value="early">Early Bird</option>
+          <option value="late">Night Owl</option>
+        </select>
+
+        <label for="tidy">Cleanliness</label>
+        <select id="tidy">
+          <option value="neat">Very Tidy</option>
+          <option value="casual">Casual</option>
+        </select>
+
+        <label for="noise">Noise Tolerance</label>
+        <select id="noise">
+          <option value="quiet">Prefers Quiet</option>
+          <option value="okay">Okay with Noise</option>
+        </select>
+
+        <button type="submit" class="hostel-button">Find Match</button>
+        <div id="result" class="matcher-result"></div>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>📅 Application Deadline</h2>
+      <p>Calculating time...</p>
+    </div>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
+    }
+
+    function matchRoommate() {
+      const sleep = document.getElementById('sleep').value;
+      const tidy = document.getElementById('tidy').value;
+      const noise = document.getElementById('noise').value;
+
+      const result = document.getElementById('result');
+      result.innerText = `🎉 Match found: A ${sleep} sleeper, ${tidy} roommate who’s ${noise} with noise.`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <style>
+    body {
+      background: #ecf0f1;
+      font-family: Arial, sans-serif;
+      padding: 40px;
+    }
+
+    h2 {
+      color: #2c3e50;
+    }
+
+    .application {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    button {
+      margin-right: 10px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .accept {
+      background-color: #2ecc71;
+      color: white;
+    }
+
+    .deny {
+      background-color: #e74c3c;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h2>All Applications</h2>
+
+  <div class="application">
+    <p><strong>Student Name:</strong> Jane Doe</p>
+    <p><strong>Hostel:</strong> Pent</p>
+    <button class="accept" onclick="respond('accepted')">Accept</button>
+    <button class="deny" onclick="respond('denied')">Deny</button>
+  </div>
+
+  <div class="application">
+    <p><strong>Student Name:</strong> John Smith</p>
+    <p><strong>Hostel:</strong> Mensah Sabah</p>
+    <button class="accept" onclick="respond('accepted')">Accept</button>
+    <button class="deny" onclick="respond('denied')">Deny</button>
+  </div>
+
+  <script>
+    function respond(action) {
+      alert(`Application ${action}`);
+      window.location.href = "notifications.html";
+    }
+  </script>
+</body>
+</html>
