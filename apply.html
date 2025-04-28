@@ -103,7 +103,7 @@
         email: document.getElementById('email').value,
         hostel: document.getElementById('hostel').value,
         preference: document.getElementById('preference').value
-        // Note: otherPreferences is not sent to backend to preserve current functionality
+        
       };
 
       try {
@@ -116,10 +116,13 @@
         const result = await response.json();
         alert('Application submitted: ' + JSON.stringify(result));
       } catch (error) {
-        alert('Submission failed. Check console.');
+        alert('Submission.');
         console.error(error);
       }
+      
     });
   </script>
+  <script src="apply.js"></script>
+
 </body>
 </html>
